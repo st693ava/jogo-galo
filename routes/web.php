@@ -14,11 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/jogo-do-galo', \App\Http\Livewire\Galo::class)->name('jogo-do-galo');
+Route::get('/dashboard', \App\Http\Livewire\Galo::class)->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
